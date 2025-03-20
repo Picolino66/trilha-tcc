@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilha do TCC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        .week {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background: #e3e3e3;
+        }
+        .week h3 {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>📌 Trilha do TCC</h2>
+        <div id="taskList"></div>
+    </div>
+
+    <script>
+        const tasks = [
+            { week: "🗓️ Semana 1 (20/03 - 27/03) → Aprimorar Front-End", tasks: ["🛠️ Listar melhorias e bugs no front-end.", "🚀 Resolver os problemas e testar as correções.", "🎨 Melhorar o design para uma interface mais intuitiva.", "🔗 Integrar com o ESP32 e validar os dados recebidos."] },
+            { week: "🗓️ Semana 2 (28/03 - 04/04) → Validar ESP32", tasks: ["💻 Revisar e testar o código do ESP32.", "⚙️ Identificar possíveis ajustes no código e iniciar implementação.", "📊 Analisar os valores atuais do identificador de ruído.", "🔍 Fazer testes e ajustes se necessário."] },
+            { week: "🗓️ Semana 3 (05/04 - 12/04) → Finalizar Escrita", tasks: ["✍️ Mapear o que falta escrever no TCC e distribuir em dias.", "📝 Escrever pelo menos 2 páginas por dia."] },
+            { week: "🗓️ Semana 4 (13/04 - 20/04) → Instalação dos Protótipos na UFLA", tasks: ["🔧 Preparar os dispositivos para instalação.", "🛠️ Fazer uma instalação inicial e testar funcionamento.", "⚙️ Ajustar parâmetros caso necessário.", "📊 Coletar dados iniciais para análise."] },
+            { week: "🗓️ Semana 5-6 (21/04 - 04/05) → Monitoramento dos Protótipos e Escrita dos Resultados", tasks: ["📡 Acompanhar a captação de dados dos sensores.", "🔍 Resolver possíveis problemas técnicos.", "📊 Coletar e organizar os dados para análise.", "📈 Adicionar gráficos e tabelas aos resultados do TCC.", "📝 Escrever a seção de Resultados e Discussão no TCC."] },
+            { week: "🗓️ Semana 7 (05/05 - 12/05) → Revisão Final", tasks: ["📖 Ler todo o TCC e corrigir erros.", "📏 Verificar formatação e normas ABNT.", "📢 Pedir feedback ao orientador."] },
+            { week: "🗓️ Semana 8 (13/05 - 15/05) → Versão Final e Entrega", tasks: ["✅ Revisão final do documento.", "📂 Gerar PDF e validar a formatação.", "📩 Submeter o TCC antes do prazo! 🎉"] }
+        ];
+
+        const taskList = document.getElementById("taskList");
+
+        tasks.forEach((weekObj, weekIndex) => {
+            const weekDiv = document.createElement("div");
+            weekDiv.classList.add("week");
+
+            const title = document.createElement("h3");
+            title.textContent = weekObj.week;
+            weekDiv.appendChild(title);
+
+            weekObj.tasks.forEach((task, taskIndex) => {
+                const label = document.createElement("label");
+                const checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+
+                // Marcar o terceiro checkbox da segunda semana automaticamente
+                /*if (weekIndex === 1 && taskIndex === 2) {
+                    checkbox.checked = true;
+                    label.style.textDecoration = "line-through";
+                }*/
+
+                checkbox.addEventListener("change", () => {
+                    if (checkbox.checked) {
+                        label.style.textDecoration = "line-through";
+                    } else {
+                        label.style.textDecoration = "none";
+                    }
+                });
+
+                label.appendChild(checkbox);
+                label.appendChild(document.createTextNode(" " + task));
+                weekDiv.appendChild(label);
+            });
+
+            taskList.appendChild(weekDiv);
+        });
+
+    </script>
+</body>
+</html>
