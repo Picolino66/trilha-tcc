@@ -69,10 +69,10 @@
                 checkbox.type = "checkbox";
 
                 // Marcar o terceiro checkbox da segunda semana automaticamente
-                /*if (weekIndex === 1 && taskIndex === 2) {
+                if (weekIndex < 1 && taskIndex < 4) {
                     checkbox.checked = true;
                     label.style.textDecoration = "line-through";
-                }*/
+                }
 
                 checkbox.addEventListener("change", () => {
                     if (checkbox.checked) {
