@@ -46,11 +46,11 @@
         const tasks = [
             { week: "🗓️ Semana 1 (20/03 - 27/03) → Aprimorar Front-End", tasks: ["🛠️ Listar melhorias e bugs no front-end.", "🚀 Resolver os problemas e testar as correções.", "🎨 Melhorar o design para uma interface mais intuitiva.", "🔗 Integrar com o ESP32 e validar os dados recebidos."] },
             { week: "🗓️ Semana 2 (28/03 - 04/04) → Validar ESP32", tasks: ["💻 Revisar e testar o código do ESP32.", "⚙️ Identificar possíveis ajustes no código e iniciar implementação.", "📊 Analisar os valores atuais do identificador de ruído.", "🔍 Fazer testes e ajustes se necessário."] },
-            { week: "🗓️ Semana 3 (05/04 - 12/04) → Finalizar Escrita", tasks: ["✍️ Mapear o que falta escrever no TCC e distribuir em dias.", "📝 Escrever pelo menos 2 páginas por dia."] },
-            { week: "🗓️ Semana 4 (13/04 - 20/04) → Instalação dos Protótipos na UFLA", tasks: ["🔧 Preparar os dispositivos para instalação.", "🛠️ Fazer uma instalação inicial e testar funcionamento.", "⚙️ Ajustar parâmetros caso necessário.", "📊 Coletar dados iniciais para análise."] },
-            { week: "🗓️ Semana 5-6 (21/04 - 04/05) → Monitoramento dos Protótipos e Escrita dos Resultados", tasks: ["📡 Acompanhar a captação de dados dos sensores.", "🔍 Resolver possíveis problemas técnicos.", "📊 Coletar e organizar os dados para análise.", "📈 Adicionar gráficos e tabelas aos resultados do TCC.", "📝 Escrever a seção de Resultados e Discussão no TCC."] },
-            { week: "🗓️ Semana 7 (05/05 - 12/05) → Revisão Final", tasks: ["📖 Ler todo o TCC e corrigir erros.", "📏 Verificar formatação e normas ABNT.", "📢 Pedir feedback ao orientador."] },
-            { week: "🗓️ Semana 8 (13/05 - 15/05) → Versão Final e Entrega", tasks: ["✅ Revisão final do documento.", "📂 Gerar PDF e validar a formatação.", "📩 Submeter o TCC antes do prazo! 🎉"] }
+            { week: "🗓️ Semana 3 (05/04 - 21/04) → Finalizar Escrita", tasks: ["✍️ Mapear o que falta escrever no TCC e distribuir em dias.", "📝 Escrever pelo menos 2 páginas por dia."] },
+            { week: "🗓️ Semana 4 (xx/xx - xx/xx) → Instalação dos Protótipos na UFLA", tasks: ["🔧 Preparar os dispositivos para instalação.", "🛠️ Fazer uma instalação inicial e testar funcionamento.", "⚙️ Ajustar parâmetros caso necessário.", "📊 Coletar dados iniciais para análise."] },
+            { week: "🗓️ Semana 5-6 (xx/xx - xx/xx) → Monitoramento dos Protótipos e Escrita dos Resultados", tasks: ["📡 Acompanhar a captação de dados dos sensores.", "🔍 Resolver possíveis problemas técnicos.", "📊 Coletar e organizar os dados para análise.", "📈 Adicionar gráficos e tabelas aos resultados do TCC.", "📝 Escrever a seção de Resultados e Discussão no TCC."] },
+            { week: "🗓️ Semana 7 (xx/xx - xx/xx) → Revisão Final", tasks: ["📖 Ler todo o TCC e corrigir erros.", "📏 Verificar formatação e normas ABNT.", "📢 Pedir feedback ao orientador."] },
+            { week: "🗓️ Semana 8 (xx/xx - xx/xx) → Versão Final e Entrega", tasks: ["✅ Revisão final do documento.", "📂 Gerar PDF e validar a formatação.", "📩 Submeter o TCC antes do prazo! 🎉"] }
         ];
 
         const taskList = document.getElementById("taskList");
@@ -68,8 +68,8 @@
                 const checkbox = document.createElement("input");
                 checkbox.type = "checkbox";
 
-                // Marcar o terceiro checkbox da segunda semana automaticamente
-                if (weekIndex < 1 && taskIndex < 4) {
+                // Marcar checkbox
+                if (weekIndex < 2 && taskIndex < 4) {
                     checkbox.checked = true;
                     label.style.textDecoration = "line-through";
                 }
